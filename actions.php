@@ -3,7 +3,7 @@
 $contentCounts = function () {
 	global $post;
 	$content = get_post_field('post_content', $post->ID);
-	$strippedContent = strip_tags($content);
+	$strippedContent = strip_tags(strip_shortcodes($content));
 	$counts = [
 		'words' => str_word_count($strippedContent),
 		'length' => strlen($strippedContent)
