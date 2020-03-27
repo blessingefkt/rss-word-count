@@ -13,7 +13,7 @@ $contentCounts = function () {
 };
 $addRssHead = function ($extra = '', $space = "\t") use ($contentCounts) {
 	echo sprintf(
-		"%s<blogInfo><name>%s</name><description>%s</description>%s</blogInfo>" . PHP_EOL,
+		"%s<blogName>%s</blogName><blogDescription>%s</blogDescription>%s" . PHP_EOL,
 		$space,
 		get_bloginfo('name'),
 		get_bloginfo('description'),
@@ -30,7 +30,7 @@ $addRssItemAction = function () use ($contentCounts, $addRssHead) {
 	$counts = $contentCounts();
 	$addRssHead(
 		sprintf(
-			PHP_EOL . '<contentCounts words="%s" characters="%s"><words>%d</words><characters>%d</characters></contentCounts>' . PHP_EOL,
+			PHP_EOL . '<blogWordCount>%d</blogWordCount><blogCharCount>%d</blogCharCount>' . PHP_EOL,
 			$counts['words'],
 			$counts['length'],
 			$counts['words'],
@@ -44,6 +44,6 @@ $addRssItemAction = function () use ($contentCounts, $addRssHead) {
 return [
 	'rss2_item' => $addRssItemAction,
 	'rss_item' => $addRssItemAction,
-	'rss2_head' => $addRssHeadAction,
-	'rss_head' => $addRssHeadAction,
+//	'rss2_head' => $addRssHeadAction,
+//	'rss_head' => $addRssHeadAction,
 ];
