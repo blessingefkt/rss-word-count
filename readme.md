@@ -16,17 +16,26 @@ Add word counts to blog RSS feeds.
 <rss version="2.0" ...>
 <channel>
 	<description>Just another WordPress site</description>
-	...
+	...     
+    <generator>https://wordpress.org/?v=5.3.2</generator>
+	<blogInfo>
+        <name>Sayla WP Plugins</name>
+        <description>Just another WordPress site</description>
+    </blogInfo>
 	<item>
 		<title>Hello world!</title>
 		<link>https://saywp.test/?p=1</link>
 				<comments>https://saywp.test/?p=1#comments</comments>
 				<pubDate>Fri, 27 Mar 2020 04:07:34 +0000</pubDate>
 		...
-        <contentCounts words="15" characters="87">
-            <words>15</words>
-            <characters>87</characters>
-        </contentCounts>
+        <blogInfo>
+            <name>Sayla WP Plugins</name>
+            <description>Just another WordPress site</description>
+                <contentCounts words="176" characters="1178">
+                    <words>176</words>
+                    <characters>1178</characters>
+                </contentCounts> 
+        </blogInfo>
 	</item>
 	</channel>
 </rss>
