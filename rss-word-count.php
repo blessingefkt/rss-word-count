@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Rss Word Count
- * Plugin URI:      https://blessingeffect.com/
+ * Plugin URI:      https://github.com/blessingefkt/rss-word-count
  * Description:     Add word counts to blog RSS feeds
  * Author:          Blessing Richardson at Sayla LLC
  * Author URI:      https://blessingeffect.com/
