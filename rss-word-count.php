@@ -7,6 +7,8 @@
  * Author URI:      https://blessingeffect.com/
  * Text Domain:     sayla-rss-word-count
  * Version:         0.1.0
+ * GitHub Plugin URI: blessingefkt/rss-word-count
+ * GitHub Plugin URI: https://github.com/blessingefkt/rss-word-count
  *
  * @package         Rss_Word_Count
  */
