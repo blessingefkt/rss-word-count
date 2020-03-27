@@ -13,8 +13,9 @@ $contentCounts = function () {
 };
 $addRssHead = function ($extra = '', $space = "\t") use ($contentCounts) {
 	echo sprintf(
-		"%s<blogName>%s</blogName><blogDescription>%s</blogDescription>%s" . PHP_EOL,
+		"%s<blogId>%s</blogId><blogName>%s</blogName><blogDescription>%s</blogDescription>%s" . PHP_EOL,
 		$space,
+		get_current_blog_id(),
 		get_bloginfo('name'),
 		get_bloginfo('description'),
 		$extra
@@ -40,10 +41,10 @@ $addRssItemAction = function () use ($contentCounts, $addRssHead) {
 	);
 };
 
-
-return [
-	'rss2_item' => $addRssItemAction,
-	'rss_item' => $addRssItemAction,
-//	'rss2_head' => $addRssHeadAction,
-//	'rss_head' => $addRssHeadAction,
-];
+$includeBlogMeta = filter_input(INPUT_GET, 'rssMeta', FILTER_SANITIZE_NUMBER_INT) === 1;
+return $includeBlogMeta
+	? [
+		'rss2_item' => $addRssItemAction,
+		'rss_item' => $addRssItemAction,
+	]
+	: [];
