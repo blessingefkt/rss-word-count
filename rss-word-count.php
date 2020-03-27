@@ -14,9 +14,8 @@
 
 define('SAYLA_RSS_WORD_COUNT_PREFIX', 'sayla-rss-word-count');
 add_action('init', function () {
-	$funcs = require __DIR__ . '/funcs.php';
-
-	foreach ($funcs as $hook => $callback) {
+	$actions = require __DIR__ . '/actions.php';
+	foreach ($actions as $hook => $callback) {
 		add_action($hook, $callback);
 	}
 });
